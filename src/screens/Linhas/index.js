@@ -1,8 +1,20 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Text,  StyleSheet, Platform, StatusBar,View } from 'react-native';
 
-export default function Linhas(){
+
+
+export default function Home(){
     return( 
-        <Text>Linhas</Text>
+        <View >
+            <Text >Linhas</Text>
+        </View> 
         );
 }
+
+const style =  StyleSheet.create({
+  AndroidSafeArea: {
+    flex: 1,
+    backgroundColor: "white",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+  }
+});

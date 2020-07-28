@@ -1,12 +1,16 @@
-import React, { Component } from 'react';
-import {StyleSheet, Platform, StatusBar, View, Text, Button} from 'react-native';
+import React from 'react';
+import {StyleSheet, Platform, StatusBar, View, Text} from 'react-native';
 import { MaterialCommunityIcons,Fontisto } from '@expo/vector-icons'; 
 
-
-export default function Home(){
+export default function Favoritos({ Navigation }){
     return( 
-         <Text>Home</Text>
+        <View >
+            <Text>teste</Text>
+        </View>
         );
+}
+Favoritos.navigationOptions = {
+  title: 'Favoritos',
 }
 
 const style =  StyleSheet.create({
