@@ -2,15 +2,12 @@ import React from 'react';
 import {StyleSheet, Platform, StatusBar, View, Text} from 'react-native';
 import { MaterialCommunityIcons,Fontisto } from '@expo/vector-icons'; 
 
-export default function Favoritos({ Navigation }){
+export default function Favoritos(){
     return( 
         <View >
-            <Text>teste</Text>
+            <Text>Favoritos</Text>
         </View>
         );
-}
-Favoritos.navigationOptions = {
-  title: 'Favoritos',
 }
 
 const style =  StyleSheet.create({

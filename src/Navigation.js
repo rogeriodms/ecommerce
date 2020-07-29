@@ -9,6 +9,9 @@ import PipasScreen from './screens/Pipas';
 import LinhasScreen from './screens/Linhas';
 import RabiolasScreen from './screens/Rabiolas';
 import OutrosScreen from './screens/Outros';
+import FavoritosScreen from './screens/Favoritos';
+import { State } from 'react-native-gesture-handler';
+
 
 
 
