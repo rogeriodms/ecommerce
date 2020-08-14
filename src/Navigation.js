@@ -1,21 +1,20 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { AntDesign, FontAwesome5, MaterialCommunityIcons, Entypo } from '@expo/vector-icons'; 
-
-
+import {Drawer} from 'native-base';
+import SideBar from './screens/SideBar';
 
 import HomeScreen from './screens/Home';
 import PipasScreen from './screens/Pipas';
 import LinhasScreen from './screens/Linhas';
 import RabiolasScreen from './screens/Rabiolas';
 import OutrosScreen from './screens/Outros';
-import FavoritosScreen from './screens/Favoritos';
-import { State } from 'react-native-gesture-handler';
-
 
 
 
 const Tab = createBottomTabNavigator();
+
+
 const icons = {
     Home: {
         lib: AntDesign,
@@ -43,6 +42,13 @@ const icons = {
 export default function Navigation(){
 
     return(
+    <>
+        <Drawer
+                ref={(ref) => { this.drawer = ref; }}
+                content={<SideBar navigator={this.navigator} />}
+                onClose={() => this.closeDrawer()}>
+      
+
         <Tab.Navigator screenOptions={({ route })=>({
             tabBarIcon:({color, size}) =>{
                 const { lib: Icon, name } = icons[route.name];
@@ -62,5 +68,9 @@ export default function Navigation(){
             <Tab.Screen name='Rabiolas' component={RabiolasScreen} />
             <Tab.Screen name='Outros' component={OutrosScreen} />
         </Tab.Navigator>
+       
+        </Drawer>
+        
+        </>   
     );
 }   
