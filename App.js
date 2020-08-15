@@ -7,15 +7,20 @@
  */
 
 import 'react-native-gesture-handler';
-import React, {Component} from 'react';
-import {View} from 'react-native';
-import App from './src/index';
+import React from 'react';
+import App from './src/routes';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import reducers from './src/screens/reducers';
+
 
 
 
 export default function Main(){
   return(
-    <App />
+    <Provider store={createStore(reducers)}>
+        <App />
+    </Provider>
   );
 
 }

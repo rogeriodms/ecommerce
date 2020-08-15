@@ -1,10 +1,8 @@
 import React from 'react';
-import {StatusBar, StyleSheet,View, Text, Image} from 'react-native';
+import {StatusBar, StyleSheet,View, Image} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import NavigationScreen from './Navigation';
-import Menu from './Menu';
 import New from './New';
-import SacolaScreen from './screens/Sacola/';
+import SacolaScreen from './screens/Sacola';
 import { createStackNavigator, HeaderTitle } from '@react-navigation/stack';
 import { MaterialCommunityIcons,Fontisto } from '@expo/vector-icons'; 
 
@@ -22,11 +20,7 @@ export default function App(){
         <>
         <NavigationContainer>
             <Stack.Navigator>
-
-                <Stack.Screen name='Login' component={Menu}/>
-
-
-                <Stack.Screen name='NavigationScreen' component={New}  options={({navigation,route}) =>({header: () =>
+                <Stack.Screen name='New' component={New}  options={({navigation,route}) =>({header: () =>
                 <View style={style.Topo}>
                     <MaterialCommunityIcons name="heart-multiple" size={35} color="#9c00c8"  onPress={() => this.openDrawer()}/>
                     <Image source={require('./screens/img/logos/minilogo.png')}/>
